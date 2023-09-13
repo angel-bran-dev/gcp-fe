@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de proyecto</title>
+</head>
+<body>
+    <div x-ref="app" x-data="app"></div>
+
+    <script type="module">
+        import Alpine from 'alpinejs';
+
+        Alpine.data('app', () => ({
+            init() {
+                console.log('Puerto definido en:', import.meta.env.VITE_PORT);
+
+                this.$refs.app.innerHTML = `
+                    <h1>Hello World</h1>
+                `;
+            }
+        }));
+
+        Alpine.start();
+    </script>
+</body>
+</html>

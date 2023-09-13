@@ -2,9 +2,12 @@
   "name": "gcp-fe",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/angel-bran-dev/gcp-fe/issues"
   },
-  "homepage": "https://github.com/angel-bran-dev/gcp-fe#readme"
+  "homepage": "https://github.com/angel-bran-dev/gcp-fe#readme",
+  "dependencies": {
+    "alpinejs": "^3.13.0"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  }
 }
