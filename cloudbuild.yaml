@@ -9,10 +9,11 @@ steps:
   args: ["run", "build"]
   # Deploy
 - name: "gcr.io/cloud-builders/gcloud"
-  env:
-    - "BRANCH=master"
   args:
     - "app"
     - "deploy"
-    - "--appyaml=app-${BRANCH}.yaml"
+    - "--appyaml=app-${_BRANCH}.yaml"
 timeout: "1600s"
+
+substitutions:
+  _BRANCH: "master"
