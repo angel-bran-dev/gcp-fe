@@ -1,10 +1,18 @@
 steps:
+  # Instalando dependencias
 - name: node:14
   entrypoint: npm
   args: ["install"]
+  # Construyendo aplicacion
 - name: node:14
   entrypoint: npm
   args: ["run", "build"]
+  # Deploy
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
+  env:
+    - "BRANCH=master"
+  args:
+    - "app"
+    - "deploy"
+    - "--appyaml=app-${BRANCH}.yaml"
 timeout: "1600s"
